@@ -27,7 +27,6 @@ class ClubsController < ApplicationController
 
   def update
     if @club.update(club_params)
-      binding.pry
       redirect_to clubs_path, notice: 'Club was successfully updated.'
     else
       render :edit
