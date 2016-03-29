@@ -19,7 +19,8 @@ class ClubsController < ApplicationController
     @club = Club.new(club_params)
 
     if @club.save
-      redirect_to clubs_path, notice: 'Club was successfully created.'
+      flash[:success] = 'Club was successfully created.'
+      redirect_to clubs_path
     else
       render :new
     end
@@ -27,15 +28,18 @@ class ClubsController < ApplicationController
 
   def update
     if @club.update(club_params)
-      redirect_to clubs_path, notice: 'Club was successfully updated.'
+      flash[:success] = 'Club was successfully updated.'
+      redirect_to clubs_path
     else
       render :edit
     end
   end
 
   def destroy
-    @club.destroy
-    redirect_to clubs_url, notice: 'Club was successfully destroyed.'
+    if @club.destroy
+      flash[:success] = 'Club was successfully deleted.'
+      redirect_to clubs_path
+    end
   end
 
   private

@@ -57,6 +57,6 @@ describe 'deleting a club' do
     visit root_path
     click_link 'Destroy'
     expect(current_path).to eq clubs_path
-    expect(page).to have_content 'Club was successfully destroyed'
+    expect(page).to have_content 'Club was successfully deleted'
   end
 end
