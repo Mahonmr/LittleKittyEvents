@@ -41,9 +41,17 @@ describe 'editing an club' do
     expect(current_path).to eq clubs_path
     expect(page).to have_content 'new location'
   end
+
+  it 'gives an error message when requried fields are missing' do
+    visit root_path
+    click_link 'Edit'
+    fill_in 'club_location', with: ' '
+    click_button 'Update Club'
+    expect(page).to have_content('error')
+  end
 end
 
-  describe 'deleting a club' do
+describe 'deleting a club' do
   let!(:club) { create :club }
 
   it 'allows you to delete a club a club' do
