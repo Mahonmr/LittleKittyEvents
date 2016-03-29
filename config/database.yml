@@ -1,0 +1,21 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: nike12
+  socket: /tmp/mysql.sock
+
+development:
+  <<: *default
+  database: LittleKittyEvents_development
+
+test:
+  <<: *default
+  database: LittleKittyEvents_test
+
+production:
+  <<: *default
+  database: LittleKittyEvents_production
+  username: LittleKittyEvents
+  password: <%= ENV['LITTLEKITTYEVENTS_DATABASE_PASSWORD'] %>
