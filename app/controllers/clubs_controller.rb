@@ -19,7 +19,7 @@ class ClubsController < ApplicationController
     @club = Club.new(club_params)
 
     if @club.save
-      redirect_to @club, notice: 'Club was successfully created.'
+      redirect_to clubs_path, notice: 'Club was successfully created.'
     else
       render :new
     end
@@ -27,7 +27,8 @@ class ClubsController < ApplicationController
 
   def update
     if @club.update(club_params)
-      redirect_to @club, notice: 'Club was successfully updated.'
+      binding.pry
+      redirect_to clubs_path, notice: 'Club was successfully updated.'
     else
       render :edit
     end
