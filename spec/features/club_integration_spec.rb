@@ -11,7 +11,6 @@ describe 'club index' do
 end
 
 describe 'creating an club' do
-
   it 'creates a club when all required fields are filled in' do
     visit root_path
     click_link 'New Club'

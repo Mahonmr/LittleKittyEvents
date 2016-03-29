@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'geocomplete_rails'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug'
