@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Guest/Desktop/LittleKittyEvents/app/models/user.rb": [
+      "/Users/Michael/rails_projects/LittleKittyEvents/app/models/user.rb": [
         1,
         1,
         null,
@@ -13,21 +13,21 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/LittleKittyEvents/app/helpers/application_helper.rb": [
+      "/Users/Michael/rails_projects/LittleKittyEvents/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/Guest/Desktop/LittleKittyEvents/app/helpers/clubs_helper.rb": [
+      "/Users/Michael/rails_projects/LittleKittyEvents/app/helpers/clubs_helper.rb": [
         1,
         null
       ],
-      "/Users/Guest/Desktop/LittleKittyEvents/app/models/club.rb": [
+      "/Users/Michael/rails_projects/LittleKittyEvents/app/models/club.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/Guest/Desktop/LittleKittyEvents/app/controllers/clubs_controller.rb": [
+      "/Users/Michael/rails_projects/LittleKittyEvents/app/controllers/clubs_controller.rb": [
         1,
         1,
         null,
@@ -82,7 +82,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/LittleKittyEvents/app/controllers/application_controller.rb": [
+      "/Users/Michael/rails_projects/LittleKittyEvents/app/controllers/application_controller.rb": [
         1,
         1,
         1,
@@ -96,6 +96,6 @@
         null
       ]
     },
-    "timestamp": 1459294486
+    "timestamp": 1459311617
   }
 }
