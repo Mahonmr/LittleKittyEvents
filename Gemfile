@@ -9,6 +9,7 @@ gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'geocomplete_rails'
 gem 'devise'
+gem 'cancancan', '~> 1.10'
 
 group :development, :test do
   gem 'byebug'
