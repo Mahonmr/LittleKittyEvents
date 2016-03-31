@@ -1,7 +1,9 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/models/user.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/models/user.rb": [
+        1,
+        1,
         1,
         1,
         null,
@@ -13,76 +15,90 @@
         null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/helpers/application_helper.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/helpers/clubs_helper.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/helpers/clubs_helper.rb": [
         1,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/models/club.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/models/club.rb": [
+        1,
+        1,
         1,
         1,
         1,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/controllers/clubs_controller.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/controllers/clubs_controller.rb": [
+        1,
+        null,
         1,
         1,
         null,
         1,
-        13,
-        null,
-        null,
-        1,
-        null,
-        null,
-        1,
-        2,
+        10,
         null,
         null,
         1,
         null,
         null,
         1,
-        2,
+        0,
         null,
-        2,
-        1,
-        1,
         null,
         1,
         null,
         null,
+        1,
+        0,
         null,
-        1,
-        2,
-        1,
-        1,
+        0,
+        0,
+        0,
         null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
+        0,
         null,
         null,
         null,
         1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
         1,
-        5,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
         null,
         null,
         1,
-        4,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
         null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/controllers/application_controller.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/controllers/application_controller.rb": [
         1,
         1,
         1,
@@ -96,6 +112,6 @@
         null
       ]
     },
-    "timestamp": 1459311617
+    "timestamp": 1459381422
   }
 }
