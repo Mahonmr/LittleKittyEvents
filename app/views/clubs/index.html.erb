@@ -21,9 +21,9 @@
         <td><%= club.location %></td>
         <td><%= club.latitude %></td>
         <td><%= club.longitude %></td>
-        <td><%= link_to 'Show', user_club_path(current_user, club) if user_signed_in? %></td>
-        <td><%= link_to 'Edit', edit_user_club_path(current_user, club) if user_signed_in? %></td>
-        <td><%= link_to 'Destroy', user_club_path(current_user, club), method: :delete, data: { confirm: 'Are you sure?' } if user_signed_in? %></td>
+        <td><%= link_to 'Show', club_path(club) if user_signed_in? %></td>
+        <td><%= link_to 'Edit', edit_club_path(club) if user_signed_in? %></td>
+        <td><%= link_to 'Destroy', club_path(club), method: :delete, data: { confirm: 'Are you sure?' } if user_signed_in? %></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Club', new_user_club_path(current_user) if user_signed_in? %>
+<%= link_to 'New Club', new_club_path if user_signed_in? %>
