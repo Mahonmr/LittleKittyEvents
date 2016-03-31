@@ -6,5 +6,9 @@ Rails.application.routes.draw do
     end
   end
 
+  scope "/admin" do
+    resources :users
+  end
+
   root :to => 'clubs#index'
 end
