@@ -8,18 +8,26 @@ class User < ActiveRecord::Base
   before_save :assign_role
 
   def assign_role
-    self.role = 'Athlete' if self.role.nil?
+    self.role = 'athlete' if self.role.nil?
   end
 
   def admin?
-    self.role == "Admin"
+    self.role == "admin"
   end
 
   def athlete?
-    self.role == "Athlete"
+    self.role == "athlete"
+  end
+
+  def home_path
+    role + "_home_path"
+  end
+
+  def signin_as
+    first_name + ' ' + last_name + '::' + role
   end
 
   def full_name
-    first_name + ' ' + last_name + '::' + role
+    first_name + ' ' + last_name
   end
 end
