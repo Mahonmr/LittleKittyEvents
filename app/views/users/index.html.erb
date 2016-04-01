@@ -18,8 +18,8 @@
         <td><%= user.first_name %></td>
         <td><%= user.last_name %></td>
         <td><%= user.role %></td>
-        <td><%#= link_to 'Show', user_club_path(current_user, club) if user_signed_in? %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%#= link_to 'Show', user_path(user) if user_signed_in? %></td>
+        <td><%= link_to 'Edit', edit_admin_user_path(user) %></td>
         <td><%#= link_to 'Destroy', user_club_path(current_user, club), method: :delete, data: { confirm: 'Are you sure?' } if user_signed_in? %></td>
       </tr>
     <% end %>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'New User', new_admin_user_path %>
