@@ -1,18 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users do
+
+  namespace :admin do
+    resources :users
+    resources :clubs
+  end
+
+  resources :athletes, except: [:index, :create, :new] do
     resources :clubs do
       post :add_club, on: :member
     end
   end
-
-  scope :admin, as: :admin do
-    resources :users
-  end
-
-  scope "/athlete" do
-    resources :clubs
-  end
-
-  root :to => 'clubs#index'
+  root to: 'home#index'
 end
