@@ -1,18 +1,24 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users do
+
+  namespace :admin do
+    resources :users
+    resources :clubs
+  end
+
+  namespace :manager do
+    resources :clubs do
+    end
+  end
+
+  namespace :athlete do
     resources :clubs do
       post :add_club, on: :member
     end
   end
 
-  scope :admin, as: :admin do
-    resources :users
-  end
+  get "home/admin", as: 'admin_home'
+  get "home/athlete", as: 'athlete_home'
 
-  scope "/athlete" do
-    resources :clubs
-  end
-
-  root :to => 'clubs#index'
+  root to: 'home#index'
 end

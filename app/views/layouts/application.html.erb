@@ -7,9 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <div id="main_menu">
+    <%= yield :main_menu %>
+  </div>
   <% if user_signed_in? %>
-    Logged in as <strong><%= current_user.full_name %></strong>.
+    Logged in as <strong><%= current_user.signin_as %></strong>.
     <%= link_to "Logout", destroy_user_session_path, method: :delete %>
   <% else %>
     <%= link_to "Sign up", new_user_registration_path %> |
@@ -17,11 +19,9 @@
   <% end %>
 
   <div class="container">
-
     <% flash.each do |key, value| %>
-    <%= render 'layouts/flash', key: key, value: value %>
+      <%= render 'layouts/flash', key: key, value: value %>
     <% end %>
-
 
     <%= yield %>
   </div>
