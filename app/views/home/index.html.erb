@@ -1,9 +1,1 @@
 <h1>Home Index Landing Page</h1>
-
-<% unless current_user.nil? %>
-  <% if current_user.admin? %>
-    <%= render 'admin_menu' %>
-  <% elsif current_user.athlete? %>
-    <%= render 'athlete_menu' %>
-  <% end %>
-<% end %>
