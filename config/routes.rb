@@ -7,11 +7,6 @@ Rails.application.routes.draw do
     resources :clubs
   end
 
-  namespace :manager do
-    resources :clubs do
-    end
-  end
-
   namespace :athlete do
     resources :users, only: [:edit, :show, :index]
     resources :clubs do

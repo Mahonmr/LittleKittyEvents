@@ -1,14 +1,38 @@
 require 'rails_helper'
 
 
+describe 'User who is not signed it' do
+
+  it 'Will allow visitors to view clubs' do
+    visit clubs_path
+    expect(page).to have_content('Listing Clubs')
+  end
+end
+
+describe 'Admin Permission' do
+  let!(:user)  { create(:user) }
+
+  it 'Will not allow you in admin if not admin' do
+    sign_in_user(user)
+    visit admin_clubs_path
+    expect(page).to have_content('That is very naughty!')
+  end
+end
+
 describe 'club index' do
-  let!(:club) { create :club }
-  let!(:user)    { create(:user) }
+  let!(:user)  { create(:user, :with_club) }
+  let!(:user2) { create(:user, :admin)}
 
   it 'Show all clubs' do
     sign_in_user(user)
     click_link 'Clubs'
     expect(page).to have_content('Little Kitty Club')
+  end
+
+  it 'Shows manager of club in the admin index' do
+    sign_in_user(user2)
+    click_link 'Clubs'
+    expect(page).to have_content('Little Kitty')
   end
 end
 
@@ -67,6 +91,19 @@ describe 'deleting a club' do
     click_link 'Destroy'
     expect(current_path).to eq athlete_clubs_path
     expect(page).to have_content 'Club was successfully deleted'
+  end
+end
+
+describe 'Joining a club' do
+  let!(:user)    { create(:user, :with_club) }
+  let!(:user2)    { create(:user) }
+
+  it 'allows athlete to join club' do
+    sign_in_user(user2)
+    visit athlete_clubs_path
+    click_link 'Add'
+    expect(current_path).to eq athlete_clubs_path
+    expect(page).to have_content "You have successfully joined #{user2.clubs.last.name}"
   end
 end
 

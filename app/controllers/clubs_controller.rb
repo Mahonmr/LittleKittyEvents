@@ -45,7 +45,7 @@ class ClubsController < ApplicationController
 
   def add_club
     @club.users << current_user
-    flash[:success] = 'Club was successfully updated.'
+    flash[:success] = "You have successfully joined #{@club.name}"
     redirect_to athlete_clubs_path
   end
 

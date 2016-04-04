@@ -17,4 +17,8 @@
       <li><%= link_to 'Me', edit_athlete_user_path(current_user) %></li>
     <% end %>
   <% end %>
+<% else %>
+  <% content_for :main_menu do %>
+    <li><%= link_to 'Clubs', clubs_path %></li>
+  <% end %>
 <% end %>
