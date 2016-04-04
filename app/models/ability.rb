@@ -7,8 +7,8 @@ class Ability
       can :manage, :all
     elsif user.athlete?
       #User Model
-      cannot [:index], User
-      can [:read, :edit, :update, :destroy], User do |member|
+      can :read, User
+      can [:edit, :update, :destroy], User do |member|
         member.try(:id) == user.id
       end
       #Club Model

@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   before_save :assign_role
 
+  scope :all_except_current_user_and_admin, ->(user) { where("id <> ? and role <> ?", user.id, 'admin') }
+
   def assign_role
     self.role = 'athlete' if self.role.nil?
   end

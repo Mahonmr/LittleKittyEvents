@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-
+  resources :users
   resources :clubs
   namespace :admin do
     resources :users
@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
 
   namespace :athlete do
+    resources :users, only: [:edit, :show, :index]
     resources :clubs do
       post :add_club, on: :member
     end
