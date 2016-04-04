@@ -5,6 +5,6 @@ class Club < ActiveRecord::Base
   validates :location, presence: true
 
   def manager
-    User.find(user_id).full_name
+    User.find(self.club_users.where('manager_id IS NOT NULL' ).last.manager_id).full_name
   end
 end
