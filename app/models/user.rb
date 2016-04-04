@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :clubs
-  has_and_belongs_to_many :clubs
+  has_many :club_users, dependent: :delete_all
+  has_many :clubs, through: :club_users
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   validates :first_name, presence: true
@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   end
 
   def signin_as
-    first_name + ' ' + last_name + '::' + role
+    first_name + ' ' + last_name + '::' + role.capitalize
   end
 
   def full_name
