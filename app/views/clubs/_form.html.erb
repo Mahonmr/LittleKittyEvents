@@ -1,5 +1,5 @@
 <%= form_for([@club]) do |f| %>
-  <%#= render "layouts/errors", :object => ([current_user, @event])%>
+  <%= render "layouts/errors", :object => (@club)%>
 
   <div class="field">
     <%= f.label :name %><br>

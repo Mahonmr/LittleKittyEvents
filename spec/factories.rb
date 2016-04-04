@@ -16,5 +16,11 @@ FactoryGirl.define do
     trait :admin do
       after(:build) { |user| user.role = 'admin' }
     end
+
+    trait :with_club do
+      after(:create) do |user, club = create(:club)|
+        club.club_users.create(user: user, manager_id: user.id)
+      end
+    end
   end
 end
