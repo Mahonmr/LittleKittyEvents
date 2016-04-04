@@ -5,9 +5,16 @@ FactoryGirl.define do
   end
 
   factory :user do
-    email 'lk@me.com'
+    sequence :email do |n|
+      "lk#{n}@.me.com"
+    end
     password 'nike12345'
     first_name 'Little'
     last_name 'Kitty'
+    role 'athlete'
+
+    trait :admin do
+      after(:build) { |user| user.role = 'admin' }
+    end
   end
 end

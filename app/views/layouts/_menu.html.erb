@@ -13,6 +13,8 @@
   <% if current_user.athlete? %>
     <% content_for :main_menu do %>
       <li><%= link_to 'Clubs', athlete_clubs_path %></li>
+      <li><%= link_to 'Athletes', athlete_users_path %></li>
+      <li><%= link_to 'Me', edit_athlete_user_path(current_user) %></li>
     <% end %>
   <% end %>
 <% end %>
