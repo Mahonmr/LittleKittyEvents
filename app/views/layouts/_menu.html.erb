@@ -10,4 +10,9 @@
       </li>
     <% end %>
   <% end %>
+  <% if current_user.athlete? %>
+    <% content_for :main_menu do %>
+      <li><%= link_to 'Clubs', athlete_clubs_path %></li>
+    <% end %>
+  <% end %>
 <% end %>
