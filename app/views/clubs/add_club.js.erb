@@ -1,5 +1,5 @@
-$("<%= j render 'clubs/clubs', object: @club %>");
-$('#flash-messages').html('<%= j render "layouts/flash", key: "notice", value: @notice %>')
-setTimeout(function() {
-  $('#flash-messages').html('')
-}, 2000)
+$('#clubshere').html('<%= j render "clubs/clubs", object: @clubs %>')
+// $('#flash-messages').html('<%= j render "layouts/flash", key: "notice", value: @notice %>')
+// setTimeout(function() {
+//   $('#flash-messages').html('')
+// }, 2000)
