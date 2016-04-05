@@ -1,0 +1,9 @@
+<tr>
+  <td id="club<%=object.id%>"><%= link_to "<i class='fa fa-star'></i>".html_safe, add_club_athlete_club_path(object), remote: true, method: :post if user_signed_in? %></td>
+  <td><%= object.name %></td>
+  <td><%= object.private %></td>
+  <td><%= object.location %></td>
+  <td><%= link_to 'Show', athlete_club_path(object) %></td>
+  <td><%= link_to 'Edit', edit_athlete_club_path(object) if can? :edit, object %></td>
+  <td><%= link_to 'Destroy', athlete_club_path(object), method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, object  %></td>
+</tr>

@@ -10,6 +10,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'geocomplete_rails'
 gem 'devise'
 gem 'cancancan', '~> 1.10'
+gem 'font-awesome-sass', '~> 4.5.0'
 
 group :development, :test do
   gem 'byebug'
