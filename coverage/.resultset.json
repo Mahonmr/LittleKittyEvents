@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/models/user.rb": [
+      "/Users/Guest/Desktop/courtney/mike/app/models/user.rb": [
         1,
         1,
         1,
@@ -38,23 +38,23 @@
         null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/helpers/admin_users_helper.rb": [
+      "/Users/Guest/Desktop/courtney/mike/app/helpers/admin_users_helper.rb": [
         1,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/helpers/application_helper.rb": [
+      "/Users/Guest/Desktop/courtney/mike/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/helpers/clubs_helper.rb": [
+      "/Users/Guest/Desktop/courtney/mike/app/helpers/clubs_helper.rb": [
         1,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/helpers/users_helper.rb": [
+      "/Users/Guest/Desktop/courtney/mike/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/models/club.rb": [
+      "/Users/Guest/Desktop/courtney/mike/app/models/club.rb": [
         1,
         1,
         1,
@@ -73,7 +73,7 @@
         null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/controllers/home_controller.rb": [
+      "/Users/Guest/Desktop/courtney/mike/app/controllers/home_controller.rb": [
         1,
         null,
         1,
@@ -88,7 +88,7 @@
         null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/controllers/application_controller.rb": [
+      "/Users/Guest/Desktop/courtney/mike/app/controllers/application_controller.rb": [
         1,
         1,
         1,
@@ -110,7 +110,7 @@
         null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/controllers/clubs_controller.rb": [
+      "/Users/Guest/Desktop/courtney/mike/app/controllers/clubs_controller.rb": [
         1,
         1,
         null,
@@ -177,7 +177,7 @@
         null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/models/ability.rb": [
+      "/Users/Guest/Desktop/courtney/mike/app/models/ability.rb": [
         1,
         1,
         null,
@@ -202,7 +202,7 @@
         null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/controllers/admin/clubs_controller.rb": [
+      "/Users/Guest/Desktop/courtney/mike/app/controllers/admin/clubs_controller.rb": [
         1,
         1,
         null,
@@ -219,18 +219,18 @@
         null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/models/club_user.rb": [
+      "/Users/Guest/Desktop/courtney/mike/app/models/club_user.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/controllers/athlete/clubs_controller.rb": [
+      "/Users/Guest/Desktop/courtney/mike/app/controllers/athlete/clubs_controller.rb": [
         1,
         null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/controllers/admin/users_controller.rb": [
+      "/Users/Guest/Desktop/courtney/mike/app/controllers/admin/users_controller.rb": [
         1,
         1,
         null,
@@ -247,7 +247,7 @@
         null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/controllers/users_controller.rb": [
+      "/Users/Guest/Desktop/courtney/mike/app/controllers/users_controller.rb": [
         1,
         1,
         null,
@@ -279,7 +279,7 @@
         null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/controllers/athlete/users_controller.rb": [
+      "/Users/Guest/Desktop/courtney/mike/app/controllers/athlete/users_controller.rb": [
         1,
         null,
         1,
@@ -288,6 +288,6 @@
         null
       ]
     },
-    "timestamp": 1459834120
+    "timestamp": 1459871817
   }
 }
