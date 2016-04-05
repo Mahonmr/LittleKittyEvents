@@ -3,11 +3,10 @@
 <table class="table table-striped table-hover">
   <thead>
     <tr>
+      <th>Join</th>
       <th>Name</th>
       <th>Private</th>
       <th>Location</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,12 +14,10 @@
   <tbody>
     <% @clubs.each do |club| %>
       <tr>
-        <td><%= link_to 'Add', add_club_athlete_club_path(club), method: :post if user_signed_in? %></td>
+        <td id="club<%=club.id%>"><%= link_to "<i class='fa fa-star #{club.add_yellow(current_user)}'></i>".html_safe, add_club_athlete_club_path(club), remote: true, method: :post if user_signed_in? %></td>
         <td><%= club.name %></td>
         <td><%= club.private %></td>
         <td><%= club.location %></td>
-        <td><%= club.latitude %></td>
-        <td><%= club.longitude %></td>
         <td><%= link_to 'Show', athlete_club_path(club) %></td>
         <td><%= link_to 'Edit', edit_athlete_club_path(club) if can? :edit, club %></td>
         <td><%= link_to 'Destroy', athlete_club_path(club), method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, club  %></td>
@@ -28,7 +25,5 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
 
 <%= link_to 'New Club', new_athlete_club_path if can? :create, Club %>

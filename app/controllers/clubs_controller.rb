@@ -44,9 +44,17 @@ class ClubsController < ApplicationController
   end
 
   def add_club
-    @club.users << current_user
-    flash[:success] = "You have successfully joined #{@club.name}"
-    redirect_to athlete_clubs_path
+    @notice = "You have successfully joined #{@club.name}"
+    if @club.users << current_user
+      flash[:success] = @notice
+    else
+      flash[:alert] = 'You were not added to the club'
+      redirect_to athlete_clubs_path
+    end
+    respond_to do |format|
+      format.html { redirect_to athlete_clubs_path }
+      format.js
+    end
   end
 
   private

@@ -7,4 +7,11 @@ class Club < ActiveRecord::Base
   def manager
     User.find(self.club_users.where('manager_id IS NOT NULL' ).last.manager_id).full_name
   end
+
+  def add_yellow(user)
+    tests = self.club_users.where('user_id = ?', user.id)
+    tests.each do |test|
+      return 'yellow' if test.manager_id.nil?
+    end
+  end
 end
