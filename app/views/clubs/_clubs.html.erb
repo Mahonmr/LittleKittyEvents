@@ -1,6 +1,6 @@
 <% object.each do |club| %>
   <tr>
-    <td id="club<%=club.id%>"><%= link_to "<i class='fa fa-star #{club.add_yellow(current_user)}'></i>".html_safe, add_club_athlete_club_path(club), remote: true, method: :post if user_signed_in? %></td>
+    <td><%=link_to "<i class='fa fa-star #{club.add_yellow(current_user)}'></i>".html_safe, add_club_athlete_club_path(club), id: "club#{club.id}", remote: true, method: :post if user_signed_in? %></td>
     <td><%= club.name %></td>
     <td><%= club.private %></td>
     <td><%= club.location %></td>

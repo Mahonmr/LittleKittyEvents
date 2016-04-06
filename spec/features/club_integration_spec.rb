@@ -98,12 +98,12 @@ describe 'Joining a club' do
   let!(:user)    { create(:user, :with_club) }
   let!(:user2)    { create(:user) }
 
-  it 'allows athlete to join club' do
+  it 'allows athlete to join club', js: true do
     sign_in_user(user2)
     visit athlete_clubs_path
-    page.find("#club#{user.clubs.last.id}").click
+    click_link("club#{user.clubs.last.id}")
     expect(current_path).to eq athlete_clubs_path
-    #expect(page).to have_content "You have successfully joined #{user.clubs.last.name}"
+    expect(page).to have_content "You have successfully joined #{user.clubs.last.name}"
   end
 end
 
