@@ -47,9 +47,11 @@
     <% flash.each do |key, value| %>
       <%= render 'layouts/flash', key: key, value: value %>
     <% end %>
-
-    <%= yield %>
   </div>
+
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>
