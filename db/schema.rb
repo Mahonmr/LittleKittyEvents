@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404030152) do
+ActiveRecord::Schema.define(version: 20160407175551) do
 
   create_table "club_users", force: :cascade do |t|
     t.integer  "club_id",    limit: 4
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 20160404030152) do
     t.float    "longitude",  limit: 24
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "event_types", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "type_url",   limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "event_type", limit: 255
+    t.string   "sub_type",   limit: 255
   end
 
   create_table "users", force: :cascade do |t|

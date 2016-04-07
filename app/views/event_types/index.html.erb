@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Event Types</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Sub Type</th>
+      <th>Image</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @event_types.each do |event_type| %>
+      <tr>
+        <td><%= event_type.name %></td>
+        <td><%= event_type.event_type %></td>
+        <td><%= event_type.sub_type %></td>
+        <td><%= image_tag(event_type.type_url, size: "20") %></td>
+        <td><%= link_to 'Show', admin_event_type_path(event_type) %></td>
+        <td><%= link_to 'Edit', edit_admin_event_type_path(event_type) %></td>
+        <td><%= link_to 'Destroy', admin_event_type_path(event_type), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Event type', new_admin_event_type_path, class: "btn btn-primary submit" %>
