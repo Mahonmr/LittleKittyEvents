@@ -2,9 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   resources :clubs
+  resources :event_types
   namespace :admin do
     resources :users
     resources :clubs
+    resources :event_types
   end
 
   namespace :athlete do

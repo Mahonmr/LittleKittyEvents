@@ -1,0 +1,23 @@
+<div class="form-horizontal well">
+  <legend>Show</legend>
+  <div class="row">
+    <div class="col-sm-2">
+      <p>
+        <strong>Name:</strong>
+        <%= @event_type.name %>
+      </p>
+      <p>
+        <strong>Type:</strong>
+        <%= @event_type.event_type %>
+      </p>
+      <p>
+        <strong>Sub Type:</strong>
+        <%= @event_type.sub_type %>
+      </p>
+    </div>
+    <div class="col-md-8">
+      <%= image_tag(@event_type.type_url, size: "70") %><br>
+    </div>
+  </div>
+  <%= link_to 'Back', admin_event_types_path, class: "btn btn-default" %>
+</div>
