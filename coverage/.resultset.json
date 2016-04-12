@@ -1,15 +1,17 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/models/user.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/models/user.rb": [
         1,
         1,
         1,
         1,
         null,
+        null,
         1,
         1,
         1,
+        null,
         null,
         2,
         null,
@@ -36,29 +38,50 @@
         1,
         2,
         null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        0,
+        null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/helpers/admin_users_helper.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/helpers/admin_users_helper.rb": [
         1,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/helpers/application_helper.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/helpers/clubs_helper.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/helpers/clubs_helper.rb": [
         1,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/helpers/event_types_helper.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/helpers/event_types_helper.rb": [
         1,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/helpers/users_helper.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/models/club.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/models/club.rb": [
         1,
         1,
         1,
@@ -77,7 +100,7 @@
         null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/controllers/home_controller.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/controllers/home_controller.rb": [
         1,
         null,
         1,
@@ -92,7 +115,7 @@
         null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/controllers/application_controller.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/controllers/application_controller.rb": [
         1,
         1,
         1,
@@ -114,7 +137,7 @@
         null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/controllers/clubs_controller.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/controllers/clubs_controller.rb": [
         1,
         1,
         null,
@@ -182,7 +205,7 @@
         null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/models/ability.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/models/ability.rb": [
         1,
         1,
         null,
@@ -207,7 +230,7 @@
         null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/controllers/admin/clubs_controller.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/controllers/admin/clubs_controller.rb": [
         1,
         1,
         null,
@@ -224,13 +247,13 @@
         null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/models/club_user.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/models/club_user.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/controllers/athlete/clubs_controller.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/controllers/athlete/clubs_controller.rb": [
         1,
         1,
         null,
@@ -238,7 +261,7 @@
         null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/controllers/admin/users_controller.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/controllers/admin/users_controller.rb": [
         1,
         1,
         null,
@@ -255,7 +278,7 @@
         null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/controllers/users_controller.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/controllers/users_controller.rb": [
         1,
         1,
         null,
@@ -287,7 +310,7 @@
         null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/controllers/athlete/users_controller.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/controllers/athlete/users_controller.rb": [
         1,
         null,
         1,
@@ -295,7 +318,7 @@
         null,
         null
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/controllers/admin/event_types_controller.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/controllers/admin/event_types_controller.rb": [
         0,
         0,
         0,
@@ -312,7 +335,7 @@
         0,
         0
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/controllers/event_types_controller.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/controllers/event_types_controller.rb": [
         0,
         0,
         0,
@@ -363,13 +386,39 @@
         0,
         0
       ],
-      "/Users/Michael/rails_projects/LittleKittyEvents/app/models/event_type.rb": [
+      "/Users/Guest/Desktop/LittleKittyEvents/app/controllers/users/omniauth_callbacks_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/Guest/Desktop/LittleKittyEvents/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/Guest/Desktop/LittleKittyEvents/app/mailers/user_notifier.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/Guest/Desktop/LittleKittyEvents/app/models/event_type.rb": [
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1460129356
+    "timestamp": 1460504042
   }
 }

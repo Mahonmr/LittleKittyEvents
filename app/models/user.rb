@@ -2,11 +2,12 @@ class User < ActiveRecord::Base
   has_many :club_users, dependent: :delete_all
   has_many :clubs, through: :club_users
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable,
+         :omniauthable, :omniauth_providers => [:facebook]
   validates :first_name, presence: true
   validates :last_name, presence: true
   before_save :assign_role
-  devise :omniauthable, :omniauth_providers => [:facebook]
+
 
   scope :all_except_current_user_and_admin, ->(user) { where("id <> ? and role <> ?", user.id, 'admin') }
 
@@ -34,19 +35,24 @@ class User < ActiveRecord::Base
     first_name + ' ' + last_name
   end
 
-  def self.new_with_session(params, session)
-    super.tap do |user|
-      binding.pry
-      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-        user.email = data["email"] if user.email.blank?
-      end
-    end
-  end
-
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
+    if self.where(email: auth.info.email).exists?
+      return_user = self.where(email: auth.info.email).first
+      return_user.provider = auth.provider
+      return_user.uid = auth.uid
+    else
+      return_user = self.create do |user|
+       user.provider = auth.provider
+       user.uid = auth.uid
+       user.first_name = auth.info.name.split.first
+       user.last_name = auth.info.name.split.last
+       user.image = auth.info.image
+       user.email = auth.info.email
+       user.password = Devise.friendly_token[0,20]
+       UserNotifier.send_signup_email(user).deliver
+     end
     end
+
+    return_user
   end
 end
