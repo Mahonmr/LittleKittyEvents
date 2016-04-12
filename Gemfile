@@ -12,6 +12,7 @@ gem 'devise'
 gem 'cancancan', '~> 1.10'
 gem 'font-awesome-sass', '~> 4.5.0'
 gem "jquery-slick-rails"
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'byebug'
