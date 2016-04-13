@@ -36,20 +36,20 @@ class User < ActiveRecord::Base
   end
 
   def self.from_omniauth(auth)
-    if self.where(email: auth.info.email).exists?
-      return_user = self.where(email: auth.info.email).first
-      return_user.provider = auth.provider
-      return_user.uid = auth.uid
+    if self.where(email: auth['info']['email']).exists?
+      return_user = self.where(email: auth['info']['email']).first
+      return_user.provider = auth['provider']
+      return_user.uid = auth['uid']
     else
       return_user = self.create do |user|
-       user.provider = auth.provider
-       user.uid = auth.uid
-       user.first_name = auth.info.name.split.first
-       user.last_name = auth.info.name.split.last
-       user.image = auth.info.image
-       user.email = auth.info.email
+       user.provider = auth['provider']
+       user.uid = auth['uid']
+       user.first_name = auth['info']['name'].split.first
+       user.last_name = auth['info']['name'].split.last
+       user.image = auth['info']['image']
+       user.email = auth['info']['email']
        user.password = Devise.friendly_token[0,20]
-       UserNotifier.send_signup_email(user).deliver
+       UserNotifier.send_signup_email(user).deliver_now
      end
     end
 

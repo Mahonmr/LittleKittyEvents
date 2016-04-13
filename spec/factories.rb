@@ -24,6 +24,12 @@ FactoryGirl.define do
       after(:build) { |user| user.role = 'admin' }
     end
 
+    trait :with_facebook do
+      after(:build) { |user|
+        user.provider = 'facebook',
+        user.uid = '0207201400451240'}
+    end
+
     trait :with_club do
       after(:create) do |user, club = create(:club)|
         club.club_users.create(user: user, manager_id: user.id)
