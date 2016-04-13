@@ -4,6 +4,13 @@ FactoryGirl.define do
     location '1234 SW Kitty Cat Ln, Portland OR'
   end
 
+  factory :event_type do
+    name 'Event Type Name'
+    event_type 'Test Type'
+    sub_type 'test Sub Type'
+    type_url 'test_url'
+  end
+
   factory :user do
     sequence :email do |n|
       "lk#{n}@.me.com"

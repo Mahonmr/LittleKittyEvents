@@ -17,10 +17,10 @@ class EventTypesController < ApplicationController
   def create
     @event_type = EventType.new(event_type_params)
     if @event_type.save
-      flash[:success] =  "Event Type Saved"
+      flash[:success] =  "Event Type Created"
       redirect_to admin_event_types_path
     else
-      flash[:error] = "Event Not Saved"
+      flash[:error] = "Event Not Created"
       render 'new'
     end
   end
