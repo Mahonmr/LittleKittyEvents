@@ -1,101 +1,81 @@
 require 'rails_helper'
-include Devise::TestHelpers
 
-describe Users::OmniauthCallbacksController, "handle facebook authentication callback" do
+describe Users::OmniauthCallbacksController, :type => :controller do
 
-  describe "#annonymous user" do
+  describe "user signing with facebook" do
     context "when facebook email doesn't exist in the system" do
       before(:each) do
         stub_env_for_omniauth
-
         get :facebook
         @user = User.where(:email => "ghost@nobody.com").first
       end
 
-     it { @user.should_not be_nil }
+      it "After Signing in via Facebook, user shoule exist in app" do
+        expect(@user).to_not eq(nil)
+      end
 
-  #     it "should create authentication with facebook id" do
-  #       authentication = @user.authentications.where(:provider => "facebook", :uid => "1234").first
-  #       authentication.should_not be_nil
-  #     end
+      it "user should be signed in" do
+        expect(subject.current_user).to_not eq(nil)
+      end
 
-  #     it { should be_user_signed_in }
+      it "redirect athlete to root path after sighing in" do
+        expect(response).to redirect_to('/home/athlete')
+      end
+    end
 
-  #     it { response.should redirect_to tasks_path }
-  #   end
+    context "sign in user with existing facebook credentials" do
+      before(:each) do
+        stub_env_for_omniauth
+        @user = create(:user, :with_facebook)
+        @user.update_attribute(:email, "ghost@nobody.com")
+        get :facebook
+      end
 
-  #   context "when facebook email already exist in the system" do
-  #     before(:each) do
-  #       stub_env_for_omniauth
+      it "After Signing in via Facebook, user shoule exist in app" do
+        expect(@user).to_not eq(nil)
+      end
 
-  #       User.create!(:email => "ghost@nobody.com", :password => "my_secret")
-  #       get :facebook
-  #     end
+      it "user should be signed in" do
+        expect(subject.current_user).to_not eq(nil)
+      end
 
-  #     it { flash[:notice].should == "Your email ghost@nobody.com is already exist in the system. You need to sign in first."}
-
-  #     it { response.should redirect_to new_user_session_path }
-  #   end
-  # end
-
-  # describe "#logged in user" do
-  #   context "when user don't have facebook authentication" do
-  #     before(:each) do
-  #       stub_env_for_omniauth
-
-  #       user = User.create!(:email => "user@example.com", :password => "my_secret")
-  #       sign_in user
-
-  #       get :facebook
-  #     end
-
-  #     it "should add facebook authentication to current user" do
-  #       user = User.where(:email => "user@example.com").first
-  #       user.should_not be_nil
-  #       fb_authentication = user.authentications.where(:provider => "facebook").first
-  #       fb_authentication.should_not be_nil
-  #       fb_authentication.uid.should == "1234"
-  #     end
-
-  #     it { should be_user_signed_in }
-
-  #     it { response.should redirect_to authentications_path }
-
-  #     it { flash[:notice].should == "Facebook is connected with your account."}
-  #   end
-
-  #   context "when user already connect with facebook" do
-  #     before(:each) do
-  #       stub_env_for_omniauth
-
-  #       user = User.create!(:email => "ghost@nobody.com", :password => "my_secret")
-  #       user.authentications.create!(:provider => "facebook", :uid => "1234")
-  #       sign_in user
-
-  #       get :facebook
-  #     end
-
-  #     it "should not add new facebook authentication" do
-  #       user = User.where(:email => "ghost@nobody.com").first
-  #       user.should_not be_nil
-  #       fb_authentications = user.authentications.where(:provider => "facebook")
-  #       fb_authentications.count.should == 1
-  #     end
-
-  #     it { should be_user_signed_in }
-
-  #     it { flash[:notice].should == "Signed in successfully." }
-
-  #     it { response.should redirect_to tasks_path }
-
+      it "redirect athlete to root path after sighing in" do
+        expect(response).to redirect_to('/home/athlete')
+      end
     end
   end
-
 end
 
 def stub_env_for_omniauth
-  # This a Devise specific thing for functional tests. See f
   request.env["devise.mapping"] = Devise.mappings[:user]
-  env = { "omniauth.auth" => { "provider" => "facebook", "uid" => "1234", "extra" => { "user_hash" => { "email" => "ghost@nobody.com" } } } }
+  env = { "omniauth.auth" => {"provider"=>"facebook",
+   "uid"=>"10207201400451240",
+   "info"=>{"email"=>"ghost@nobody.com", "name"=>"Mike Mahoney", "image"=>"http://graph.facebook.com/10207201400451240/picture"},
+   "credentials"=>
+    {"token"=>
+      "CAAHbM0zGhkYBAAh9HFSAFk6fO5HfCMNc8lid5cvmB6E7FruBQEzFUiFwZA1wgKbAlJV0wSXJu4g8ZAwdHi94ZCUcmtp5ZByfduZAlu86AICj8ci1oFV8JqTdbxWDJqDcSpmSCdQ8INGZCVuwYgH5BJqM8wtKRtHsmqzLbGOxS4Dp2bObZA6yIPfQ7l4GVdkb4cwDNFWz87yQgZDZD",
+     "expires_at"=>1465743999,
+     "expires"=>true},
+   "extra"=>{"raw_info"=>{"name"=>"Mike Mahoney", "email"=>"ghost@nobody.com", "id"=>"10207201400451240"}}}}
   request.env["omniauth.auth"] = env["omniauth.auth"]
 end
+
+
+
+
+
+
+
+
+
+
+
+# {"provider"=>"facebook",
+#  "uid"=>"10207201400451240",
+#  "info"=>{"email"=>"mahonmr@me.com", "name"=>"Mike Mahoney", "image"=>"http://graph.facebook.com/10207201400451240/picture"},
+#  "credentials"=>
+#   {"token"=>
+#     "CAAHbM0zGhkYBAAh9HFSAFk6fO5HfCMNc8lid5cvmB6E7FruBQEzFUiFwZA1wgKbAlJV0wSXJu4g8ZAwdHi94ZCUcmtp5ZByfduZAlu86AICj8ci1oFV8JqTdbxWDJqDcSpmSCdQ8INGZCVuwYgH5BJqM8wtKRtHsmqzLbGOxS4Dp2bObZA6yIPfQ7l4GVdkb4cwDNFWz87yQgZDZD",
+#    "expires_at"=>1465743999,
+#    "expires"=>true},
+#  "extra"=>{"raw_info"=>{"name"=>"Mike Mahoney", "email"=>"mahonmr@me.com", "id"=>"10207201400451240"}}}
