@@ -44,10 +44,10 @@ class ClubsController < ApplicationController
   end
 
   def add_delete_club
-    if current_user.clubs.where(:id => @club)
-      delete_club
-    else
+    if current_user.clubs.where(:id => @club).empty?
       add_club
+    else
+      delete_club
     end
   end
 
