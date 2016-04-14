@@ -1,19 +1,27 @@
 <h1>Listing Clubs</h1>
 
-<table class="table table-striped table-hover">
-  <thead>
-    <tr>
-      <th>Join</th>
-      <th>Name</th>
-      <th>Private</th>
-      <th>Location</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<ul class="nav nav-tabs">
+  <li class="active">
+    <a href="#all_clubs" data-toggle="tab" aria-expanded="true">All Clubs</a>
+  </li>
+  <li>
+    <a href="#joined" data-toggle="tab" aria-expanded="false">Joined Clubs</a>
+  </li>
+  <li>
+    <a href="#mine" data-toggle="tab" aria-expanded="false">My Clubs</a>
+  </li>
+</ul>
 
-  <tbody id="clubshere">
-  <%= render 'clubs', object: @clubs %>
-  </tbody>
-</table>
+<div class="tab-content">
+  <div class="tab-pane active" id="all_clubs">
+    <%= render 'clubs', object: @clubs %>
+  </div>
+  <div class="tab-pane" id="joined">
+      <%= render 'clubs', object: @joined_clubs %>
+  </div>
+  <div class="tab-pane" id="mine">
+    <%= render 'clubs', object: @my_clubs %>
+  </div>
+</div>
 
 <%= link_to 'New Club', new_athlete_club_path if can? :create, Club %>

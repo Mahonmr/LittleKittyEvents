@@ -1,12 +1,26 @@
-<% object.each do |club| %>
-  <tr>
-    <td><%=link_to "<i class='fa fa-star #{club.add_yellow(current_user)}'></i>".html_safe, add_club_athlete_club_path(club), id: "club#{club.id}", remote: true, method: :post if user_signed_in? %></td>
-    <td><%= club.name %></td>
-    <td><%= club.private %></td>
-    <td><%= club.location %></td>
-    <td><%= link_to 'Show', athlete_club_path(club) %></td>
-    <td><%= link_to 'Edit', edit_athlete_club_path(club) if can? :edit, club %></td>
-    <td><%= link_to 'Destroy', athlete_club_path(club), method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, club  %></td>
-  </tr>
 
-<% end %>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Join</th>
+      <th>Name</th>
+      <th>Private</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody id="clubshere">
+    <% object.each do |club| %>
+      <tr>
+        <td><%=link_to "<i class='fa fa-star #{club.add_yellow(current_user)}'></i>".html_safe, add_delete_club_athlete_club_path(club), id: "club#{club.id}", method: :post if user_signed_in? %></td>
+        <td><%= club.name %></td>
+        <td><%= club.private %></td>
+        <td><%= club.location %></td>
+        <td><%= link_to 'Show', athlete_club_path(club) %></td>
+        <td><%= link_to 'Edit', edit_athlete_club_path(club) if can? :edit, club %></td>
+        <td><%= link_to 'Destroy', athlete_club_path(club), method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, club  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

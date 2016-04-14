@@ -12,7 +12,7 @@ class Ability
         member.try(:id) == user.id
       end
       #Club Model
-      can [:add_club, :create, :read], Club
+      can [:add_club, :add_delete_club, :delete_club, :create, :read], Club
       can [:edit, :update, :destroy,], Club do |club|
         club.club_users.where(manager_id: user.id).any?
       end

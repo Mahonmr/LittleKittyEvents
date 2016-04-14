@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   namespace :athlete do
     resources :users, only: [:edit, :show, :index]
     resources :clubs do
-      post :add_club, on: :member
+      post :add_delete_club, on: :member
     end
   end
 
