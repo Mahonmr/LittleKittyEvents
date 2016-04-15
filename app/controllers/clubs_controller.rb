@@ -82,9 +82,13 @@ class ClubsController < ApplicationController
   private
 
   def load_page
-    @clubs = Club.clubs(current_user)
-    @joined_clubs = Club.joined_clubs(current_user)
-    @my_clubs = Club.my_clubs(current_user)
+    if signed_in?
+      @clubs = Club.clubs(current_user)
+      @joined_clubs = Club.joined_clubs(current_user)
+      @my_clubs = Club.my_clubs(current_user)
+    else
+      @clubs = Club.all
+    end
   end
 
   def club_params
